@@ -1,5 +1,5 @@
 const SAMPLES_PER_NUMBER = 1000;
-const BASE_URL = "/digits";
+const BASE_URL = `${window.location.pathname}digits`;
 let dataLoaded = false;
 
 // Loads MNIST images and creates feature vectors
