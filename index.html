@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="drawing.js"></script>
+    <title>KNN</title>
+</head>
+<body>
+    <header>
+        <h1>KNN Digit Recognizer</h1>
+    </header>
+    <div class="main-container blurred">
+        <div class="canvas-container">
+            <h2>Drawing Area</h2>
+            <canvas id="drawingCanvas"></canvas>
+            <div class="controls">
+                <button onclick="guess();">GUESS</button>
+                <button onclick="clearCanvas();">ERASE</button>
+            </div>
+        </div>
+        <div class="canvas-container">
+            <h2>Point Cloud Visualizer</h2>
+            <canvas id="visualizerCanvas"></canvas>
+            <div class="controls">
+                <span>X: </span>
+                <select name="xAxis" id="xAxis">
+                    <option value="LeftPourTopSide">LeftPourTopSide</option>
+                    <option value="LeftPourBottomSide">LeftPourBottomSide</option>
+                    <option value="RightPourTopSide">RightPourTopSide</option>
+                    <option value="RightPourBottomSide">RightPourBottomSide</option>
+                    <option value="TopPourLeftSide">TopPourLeftSide</option>
+                    <option value="TopPourRightSide">TopPourRightSide</option>
+                    <option value="BottomPourLeftSide">BottomPourLeftSide</option>
+                    <option value="BottomPourRightSide">BottomPourRightSide</option>
+                    <option value="FullPour">FullPour</option>
+                </select>
+                <span>Y: </span>
+                <select name="yAxis" id="yAxis">
+                    <option value="LeftPourTopSide">LeftPourTopSide</option>
+                    <option value="LeftPourBottomSide" selected>LeftPourBottomSide</option>
+                    <option value="RightPourTopSide">RightPourTopSide</option>
+                    <option value="RightPourBottomSide">RightPourBottomSide</option>
+                    <option value="TopPourLeftSide">TopPourLeftSide</option>
+                    <option value="TopPourRightSide">TopPourRightSide</option>
+                    <option value="BottomPourLeftSide">BottomPourLeftSide</option>
+                    <option value="BottomPourRightSide">BottomPourRightSide</option>
+                    <option value="FullPour">FullPour</option>
+                </select>
+                <span>VisualRange: </span>
+                <input type="range" min="1" max="5" value="2" class="slider" id="visualRange">
+            </div>
+        </div>
+    </div>
+
+    <div id="guess">Guess</div>
+
+    <div id="overlay">
+        Data Loaded: 0/0
+    </div>
+</body>
+</html>

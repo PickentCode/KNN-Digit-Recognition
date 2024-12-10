@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #D3D3D3;
+    background-color: #181B1E;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #0A0D10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: filter 0.5s ease;
+}
+
+.main-container.blurred {
+    filter: blur(10px);
+}
+
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    flex: 1;
+    min-width: 300px;
+    max-width: 50%;
+    height: 80%;
+    box-sizing: border-box;
+}
+
+canvas {
+    border: 5px solid #0A0D10;
+    border-radius: 25px;
+    background-color: #121519;
+    width: 100%;
+    height: calc(100% - 50px);
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-weight: bold;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    background-color: #D9004E;
+    color: #D3D3D3;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #960037;
+}
+
+select, input[type="range"] {
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #D9004E;
+    color: #D3D3D3;
+    border: 3px solid #D9004E;
+    accent-color: #D9004E;
+    border-radius: 4px;
+}
+
+#overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background: #D9004E;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+#overlay.hidden {
+    display: none;
+}
+
+#guess {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    padding: 20px;
+    font-size: 78px;
+    font-weight: bold;
+    text-align: center;
+    background: #D9004E;
+    color: white;
+    border-radius: 10px;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#guess.show {
+    opacity: 1;
+    pointer-events: auto;
+}
