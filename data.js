@@ -1,5 +1,5 @@
 const SAMPLES_PER_NUMBER = 1000;
-const BASE_URL = "/PickentCode/KNN/digits";
+const BASE_URL = "/digits";
 let dataLoaded = false;
 
 // Loads MNIST images and creates feature vectors
