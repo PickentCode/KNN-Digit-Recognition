@@ -1,4 +1,4 @@
-const SAMPLES_PER_NUMBER = 100; // Change to 1000 for better accuracy
+const SAMPLES_PER_NUMBER = 400; // Change to 1000 for better accuracy
 const BASE_URL = `${window.location.pathname}digits`;
 let dataLoaded = false;
 
