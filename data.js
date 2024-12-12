@@ -1,6 +1,7 @@
 const SAMPLES_PER_NUMBER = 400; // Change to 1000 for better accuracy
 const BASE_URL = `${window.location.pathname}digits`;
 let dataLoaded = false;
+let imagesLoaded = 0;
 
 // Loads MNIST images and creates feature vectors
 async function loadData() {
@@ -13,8 +14,7 @@ async function loadData() {
     canvas.width = 28;
     canvas.height = 28;
     const ctx = canvas.getContext('2d');
-    let imagesLoaded = 0;
-    let imagesFailed = 0;
+    imagesLoaded = 0;
 
     const imagePromises = [];
 
@@ -30,7 +30,6 @@ async function loadData() {
                         overlay.innerText = `Data Loaded: ${imagesLoaded}/${SAMPLES_PER_NUMBER * 10}`;
                     })
                     .catch(() => {
-                        imagesFailed++;
                         console.error(`Failed to load image: ${imgUrl}`);
                     })
             );

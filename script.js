@@ -37,7 +37,7 @@ const guess = () => {
     let drawingMatrix = createCenteredMatrix();
     let dataVector = createDataVector(drawingMatrix, 10);
 
-    if (points.length == SAMPLES_PER_NUMBER * 10 + 1) points.pop();
+    if (points.length == imagesLoaded + 1) points.pop();
     points.push(dataVector);
     drawPointCloud(xAxisSelect.value, yAxisSelect.value);
 
