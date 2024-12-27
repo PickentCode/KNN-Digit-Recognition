@@ -3,6 +3,19 @@ const BASE_URL = `${window.location.pathname}digits`;
 let dataLoaded = false;
 let imagesLoaded = 0;
 
+// For online demo, I use previously extracted data
+function usePreviouslyExtractedData() {
+    points = previously_extracted;
+    dataLoaded = true;
+    shuffleArray(points);
+    overlay.classList.add('hidden');
+    const mainContainer = document.getElementsByClassName('main-container')[0];
+    mainContainer.classList.remove('blurred');
+    drawPointCloud(xAxisSelect.value, yAxisSelect.value);
+    imagesLoaded = 10000;
+    console.log("Data loaded successfully!");
+}
+
 // Loads MNIST images and creates feature vectors
 async function loadData() {
     const mainContainer = document.getElementsByClassName('main-container')[0];

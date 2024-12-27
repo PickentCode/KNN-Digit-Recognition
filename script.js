@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     bindFeatureSelectors();
     resizeCanvas();
     clearCanvas();
-    loadData();
+    usePreviouslyExtractedData(); // For this demo, I'm using my previously extracted data cloud
+    //loadData(); // Call when using your own data
 });
 
 
